@@ -1,0 +1,25 @@
+----------------------------------------
+Begin Batch Job Prologue Tue Nov  6 22:48:56 EST 2018
+Job ID:           262871.cb2rr.cst.temple.edu
+Username:         tuf74040
+Group:            roder_voelz
+Job Name:         dtram_20000
+Resources List:   neednodes=1:ppn=10,nodes=1:ppn=10,walltime=24:00:00
+Queue:            normal
+Account:          
+Nodes:            c-2-19 
+End Batch Job Prologue Tue Nov  6 22:48:56 EST 2018
+----------------------------------------
+----------------------------------------
+Begin Batch Job Epilogue Tue Nov  6 22:51:19 EST 2018
+Job ID:           262871.cb2rr.cst.temple.edu
+Username:         tuf74040
+Group:            roder_voelz
+Job Name:         dtram_20000
+Session:          11150
+Limits:           neednodes=1:ppn=10,nodes=1:ppn=10,walltime=24:00:00
+Resources:        cput=00:02:02,mem=76744kb,vmem=565976kb,walltime=00:02:23
+Queue:            normal
+Account:          
+End Batch Job Epilogue Tue Nov  6 22:51:39 EST 2018
+----------------------------------------
