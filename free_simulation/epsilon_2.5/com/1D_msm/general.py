@@ -17,12 +17,12 @@ if (1):
         a = cluster_bin(t,bin_min,bin_max, nstates)
         cm.append(a)
     cm = np.array(cm)
-    np.save('clustered_matrix.npy',cm)
+    np.save('clustered_matrix_%d.npy'%nstates,cm)
     print cm, np.array(cm).shape
     print "Done!"
 
 # bootstrap trajectories
-
+#sys.exit()
 
 fout = open('implied_timescales.dat','w')
 header = '# tau(ns)\tround\timplied_timescale(ns)'
@@ -126,7 +126,7 @@ if bootstrap:
         plt.yscale('log')
         plt.xlabel('lag time (ns)')
         plt.ylabel('implied timescale (ns)')
-        plt.savefig('implied_timescale.pdf')
+        plt.savefig('implied_timescale_%d.pdf'%nstates)
     print 'Done!'
 
 else:
@@ -145,7 +145,7 @@ else:
         plt.yscale('log')
         plt.xlabel('lag time (ns)')
         plt.ylabel('implied timescale (ns)')
-        plt.savefig('implied_timescale.pdf')
+        plt.savefig('implied_timescale_%d.pdf'%nstates)
     print 'Done!'
 
 
