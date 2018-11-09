@@ -6,7 +6,7 @@ from estimators import *
 
 nstates = 100
 bin_min = 0.0 
-bin_max = 0.8
+bin_max = 3.1
 # cluster trajectories based on bin index
 if (1):
     print "clustering..."
@@ -52,7 +52,7 @@ if (1):
                 tau_in_ns = tau*0.1
                 print "lagtime = ", tau_in_ns,'ns'
                 tcm = construct_raw_tcm(new_cm,tau,nstates)
-                tcm[tcm==0.] = 1.   # add pseudocount if there is any zero count
+                tcm[tcm==0.] = 0.0000001   # add pseudocount if there is any zero count
                 np.save('raw_tcm_tau%d_r%d.npy'%(tau,i),tcm)
                 # construct transition probability matrix
                 print "constructing transition probability matrix..."
@@ -66,6 +66,7 @@ if (1):
                     for j in range(sm):
                         implied_timescale_in_ns = -1.0*tau_in_ns/np.log(mu[j+1])
                         outstr = '%6.3f\t%d\t%6.3f'%(tau_in_ns, i, implied_timescale_in_ns)
+                        print 'writing data...'
                         fout.write(outstr+'\n')
                 except:
                     'Skipped'
