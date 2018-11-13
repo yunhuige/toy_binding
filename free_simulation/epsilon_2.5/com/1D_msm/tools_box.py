@@ -2,33 +2,9 @@ import sys, os
 import numpy as np
 
 
-def compute_bias(x1, x2, xi, k):
-    """
-    Parameters:
-    x1    first bias potential position (nm)
-    x2    second bias potential position (nm)
-    xi    snapshots position (nm)
-    k     bias potential (kJ mol^-1 nm^-2)
-    """
-    b0 = k*0.5*((x1 - xi)**2.)
-    b1 = k*0.5*((x2 - xi)**2.)
-    return b1 - b0
-
-def compute_bias_with_dhdl(x1, x2, xi, k, du):
-    """ 
-    Parameters:
-    x1    first bias potential position (nm)
-    x2    second bias potential position (nm)
-    xi    snapshots position (nm)
-    k     bias potential (kJ mol^-1 nm^-2)
-    du    energy difference between different lambdas from dhdl.xvg file
-    """
-    b0 = k*0.5*((x1 - xi)**2.)
-    b1 = k*0.5*((x2 - xi)**2.)
-    return du + b1 - b0
-
 def cluster_bin(traj, xmin, xmax, nbins):
-    if type(traj) == str:
+    # determine if it is a numpy array or a file name to load
+    if type(traj) == str:   
         t = np.load(traj).astype(dtype='float64')
     else:
         t = traj
@@ -43,10 +19,14 @@ def cluster_bin(traj, xmin, xmax, nbins):
     return ind3
         
 def construct_raw_tcm(count_mtx, tau, nstates): 
+
+    # determine if it is a numpy array or a file name to load
+
     if type(count_mtx) == str:
         ctm = np.load(count_mtx)
     else:
         ctm = count_mtx
+    # check if this is one trajectory or multiple trajectories
     if len(ctm.shape) == 1:
         tcm = np.zeros((nstates, nstates))
         for j in range(len(ctm)-tau):
