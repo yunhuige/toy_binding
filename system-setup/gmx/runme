@@ -1,0 +1,30 @@
+### NOTE: First, run the toy-receptor.ipynb notebook in the directory one up
+# Then you will have the updated starting files you need
+
+# Get the latest tweaks/debugs
+cp ../test.pdb ./
+cp ../pocket.top ./
+
+# convert the PDB to a gromacs *.gro structure
+gmx editconf -f test.pdb -o test.gro -c -box 3.0 3.0 3.0 -bt cubic
+
+# solvate the box with water
+gmx solvate -cp test.gro  -cs spc216.gro -o test_waterbox.gro -p pocket.top
+
+#### add counterions ###
+# step 1: make a tpr file so genion will work
+gmx grompp -f ions.mdp -c test_waterbox.gro -p pocket.top -o ions.tpr
+# step 2: Now we have an atomic-level description of our system in the binary file ions.tpr. We will pass this file to genion:
+gmx genion -s ions.tpr -o test_waterbox_ions.gro -p pocket.top -pname NA -nname CL -conc 0.100 
+
+echo "q\n" | gmx make_ndx -f test_waterbox_ions.gro
+
+# Minimize the system
+gmx grompp -f minimize.mdp -c test_waterbox_ions.gro -p pocket.top -o minimize.tpr
+gmx mdrun -v -s minimize.tpr -o minimization.trr
+
+# Equilibrate the system
+gmx grompp -f equil.mdp -c confout.gro -p pocket.top -o equil.tpr
+gmx mdrun -v -s equil.tpr
+
+
