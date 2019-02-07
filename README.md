@@ -129,7 +129,13 @@ The then solvated in a cubic periodic box of 860 TIP3P waters, two Na+ ions, two
 ![Image of full simulation system](system-setup/water-ion-box.png)
 
 
-## Trajectory data
+## Determining a suitable value of interaction parameter ε for future tests
+
+Our first task with this system was to find a value of the Lennard-Jones parameter ε that will work well as a challenging test of binding affinities and rates.   We sought to find parameters such that the slowest binidng/unbinding times are on the timescale of hundreds of nanoseconds. 
+
+We kept the original σ parameter (for carbon) the same (0.339967 nm), and varied the ε value from 0.0 to 10.0 kJ/mol in increments of 0.5 kJ/mol (the original value was 0.457730 kJ/mol).  For each value of epsilon, we simulated 10 trajectories of length 1 µs, resulting in a total of 210 µs of aggregate trajecory data
+
+
 
 
 
