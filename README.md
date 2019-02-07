@@ -12,6 +12,9 @@ The *ligand* is a single, uncharged Lennard-Jones (LJ) particle with the same pa
 
 The *binding pocket* to an 11-particle icosahedral binding pocket made from the same atom type.
 
+![Image of binding pocket](system-setup/pocket-visualize.png)
+
+
 From `pocket.top':
 ```
 ;
