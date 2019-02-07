@@ -124,8 +124,9 @@ Pocket in Water
 Pocket             1
 ```
 
+The then solvated in a cubic periodic box of 860 TIP3P waters, two Na+ ions, two Cl- ions, pressure equilibrated using NPT (see setup), then run at NVT using a (3.00859 nm)^3 cubic periodic box.
 
-
+![Image of full simulation system](system-setup/water-ion-box.png)
 
 
 ## Trajectory data
