@@ -4,6 +4,6 @@ We kept the original σ parameter (for carbon) the same (0.339967 nm), and varie
 
 # distance calculations
 
-In the [distances](distances) folder distances for every from
+In the [distances](distances) directory are numpy arrays containing the distance between the ligand and the center of the binding pocket (computed as the center of mass of atoms 1-8,10,11 gromacs indices) for each frame.
 
 
