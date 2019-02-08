@@ -133,7 +133,31 @@ The then solvated in a cubic periodic box of 860 TIP3P waters, two Na+ ions, two
 
 Our first task with this system was to find a value of the Lennard-Jones parameter ε that will work well as a challenging test of binding affinities and rates.   We sought to find parameters such that the slowest binidng/unbinding times are on the timescale of hundreds of nanoseconds. 
 
-We kept the original σ parameter (for carbon) the same (0.339967 nm), and varied the ε value from 0.0 to 10.0 kJ/mol in increments of 0.5 kJ/mol (the original value was 0.457730 kJ/mol).  For each value of epsilon, we simulated 10 trajectories of length 1 µs, resulting in a total of 210 µs of aggregate trajecory data.  Snapshots were recorded every 100 ps.  This data is found in the [free_simulation/all_epsilon](https://github.com/yunhuige/toy_binding/tree/master/free_simulation/all_epsilon)
+We kept the original σ parameter (for carbon) the same (0.339967 nm), and varied the ε value from 0.0 to 10.0 kJ/mol in increments of 0.5 kJ/mol (the original value was 0.457730 kJ/mol).  For each value of epsilon, we simulated 10 trajectories of length 1 µs, resulting in a total of 210 µs of aggregate trajecory data.  Snapshots were recorded every 100 ps.  This data is found in  [free_simulation/all_epsilon](https://github.com/yunhuige/toy_binding/tree/master/free_simulation/all_epsilon).
+
+Naive estimates of the free energy of binding and rates were made directy from the trajectory data, assuming the simulations sample from the equilibirum distribution.  The analsys showed increased bound-state stability and slower kinetics as a function of epsilon.
+
+[ show graph  here ]
+
+From these rough estimates, we chose an epsilon value of 2.5 kJ/mol for all subsequent tests, for which the ∆G of binding is about XXXX kJ/mol, and the kobs = k_b + k_u (estimated from a simple few-state MSM) was about XXXXX ns.
+
+## Umbrella sampling and FEP for fast MSM-based estimation of binding affinity and kinetics
+
+Next, we were interested in how best to use harmonic biases and FEP to estimate binding affinity and kinetics.
+
+The Noé group has shown that uncertainty of thermodynamic estimates is larger with MBAR than with a multi-ensemble MSM estimator like dTRAM or TRAM.  We can show this for our model system as well.  Specifically, we need a graph showing that as more trajectory data is included, binding free energy uncertainty estimates decrease *faster* using dTRAM/TRAM than with MBAR.
+
+Similarly, we hope to show that uncertainties in estimated *rates* decrease faster with dTRAM/TRAM than with a standard MSM estimator.
+
+
+
+
+
+
+
+We compare 
+
+
 
 
 
