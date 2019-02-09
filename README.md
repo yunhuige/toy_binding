@@ -2,6 +2,14 @@
 
 A GitHub repository for the `toy_binding` project.  
 
+## Requirements
+
+For MSM estimation, we are using the [msmtools](https://github.com/markovmodel/msmtools) library from The Noé group.  You can install this librrary through `conda` using:
+
+```
+conda install -c https://conda.binstar.org/omnia msmtools
+```
+
 ## Description
 
 In this work, we simulate a "toy" binding system in which a ligand can bind and unbind to toy binding pocket. Using this system as a benchmark, our goal is to evaluate the effectiveness of various enhanced sampling schemes to estimate binding affinity and kinetics.
