@@ -6,4 +6,12 @@ We kept the original σ parameter (for carbon) the same (0.339967 nm), and varie
 
 In the [distances](distances) directory are numpy arrays containing the distance between the ligand and the center of the binding pocket (computed as the center of mass of atoms 1-8,10,11 gromacs indices) for each frame.
 
+# histograms
+
+In the [histograms](histograms) directory are histogram figures of computed distances between the ligand and the center of the binding pocket (computed as the center of mass of atoms 1-8,10,11 gromacs indices) for each frame. Potential energy (kcal/mol) was computed as `U=-RT*ln(P)`. 
+
+# traces & smooth_traces 
+
+Figures of distance shown in [distances](distances) change along simulation time. The raw plotting is noisy so a smoothed (averaged) version is available in [smooth_traces](smooth_traces).
+
 
