@@ -21,6 +21,9 @@ a=np.load('tica_eigenvectors.npy')
 
 """
 
+tick_labels = ('C9-lig', 'C5-lig', 'C7-lig', 'C1-lig', 'C11-lig', 'C2-lig',
+               'C4-lig', 'C8-lig', 'C10-lig', 'C3-lig', 'C6-lig')
+
 # Make bar plots of the eigenvectors color-coded
 # by the type pocket atom
 
@@ -32,8 +35,8 @@ for i in range(0,4):
     plt.bar([0], a[0,i], label='opposite e', color='blue')
     plt.bar(range(1,6), a[1:6,i], label='backrow', color='g')
     plt.bar(range(6,11), a[6:11,i], label='lip', color='r')
-
-    plt.title('tICA eigenvector $\phi_%d$'%i)
+    plt.xticks( np.arange(0.5, 11.5, 1.0), tick_labels, rotation=75)
+    plt.title('tICA eigenvector $\phi_%d$'%panel)
 plt.tight_layout()
 
 #plt.show()
