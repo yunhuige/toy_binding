@@ -1,0 +1,27 @@
+Using "test.pdb" from here: git/toy_binding/system-setup/ as a template. C12 is the original point {0 0 0}. To rotate the pocket and make it faces up along z axis, the following operations are done using VMD:
+1. set sel [atomselect top all]
+2. set M [transvecinv {3.246000051498413 0.0 2.00600004196167}]
+3. $sel move $M 
+4. set M [transaxis y 90]
+5. $sel move $M 
+
+Then a new pdb file is saved:
+
+CRYST1    0.000    0.000    0.000  90.00  90.00  90.00 P 1           1
+ATOM      1  C1  DUM A   1       2.761   2.006  -1.706  1.00  0.00           C
+ATOM      2  C2  DUM A   1       2.761  -2.006  -1.706  1.00  0.00           C
+ATOM      3  C3  DUM A   1      -2.761   2.006   1.706  1.00  0.00           C
+ATOM      4  C4  DUM A   1      -2.761  -2.006   1.706  1.00  0.00           C
+ATOM      5  C5  DUM A   1      -1.055   3.246  -1.706  1.00  0.00           C
+ATOM      6  C6  DUM A   1       1.055   3.246   1.706  1.00  0.00           C
+ATOM      7  C7  DUM A   1      -1.055  -3.246  -1.706  1.00  0.00           C
+ATOM      8  C8  DUM A   1       1.055  -3.246   1.706  1.00  0.00           C
+ATOM      9  C9  DUM A   1       0.000   0.000  -3.816  1.00  0.00           C
+ATOM     10  C10 DUM A   1       3.413   0.000   1.707  1.00  0.00           C
+ATOM     11  C11 DUM A   1      -3.413   0.000  -1.707  1.00  0.00           C
+ATOM     12  C12 DUM A   1       0.000   0.000   0.000  1.00  0.00           C
+END
+
+Note that C12 is still the original point and C9 now is on z axis. 
+
+Then loading the original trajectories in VMD onto this molecule and align them using RMSD trajectory tools. Save the outcome trajectories in *dcd format (xtc format is not available) excluding the first frame since it is a reference strcuture and not a part of the trajectories. 
