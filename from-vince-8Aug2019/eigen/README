@@ -1,0 +1,10 @@
+Assignment.npy: assignment file (state definition: state 0 -> bound state, state 1-10 -> upper face state, state 11-15 -> lower face state, state 16 -> entrance state, state 17 -> unbound state )
+
+estimators.py: functions created by Vince including different estimators 
+
+tools_box.py: functions created by Yunhui to build transition count matrix
+
+construct_MSM.py: scripts of building MSM using assigement file
+
+
+
