@@ -1,0 +1,69 @@
+title                    = equil 
+cpp                      = /lib/cpp
+include                  = -I../top
+define                   = 
+integrator               = md-vv    ; sd not supported for expanded-ensemble!
+dt                       = 0.002  ; 2 fs steps
+nsteps                   = 200000000   ; 400 ns total
+nstxout                  = 500000    ; every 1000 ps
+nstvout                  = 50000
+nstlog                   = 50000
+nstxtcout                = 500 ; every 1 ps
+nstcomm                  = 10
+nstcalcenergy            = 500
+nstenergy                = 500
+comm_grps                = Protein  Non-Protein
+xtc_grps                 = System
+energygrps               = Protein  Non-Protein
+nstlist                  = 10
+;freezegrps               = r_1-298_&_C_N_O_CA
+;freezedim                = Y Y Y
+ns_type                  = grid
+coulombtype     = PME
+rvdw            = 0.9
+rlist           = 0.9
+rcoulomb        = 0.9
+fourierspacing  = 0.12
+pme_order       = 4
+ewald_rtol      = 1e-5
+fourierspacing           = 
+pme_order                =
+tcoupl                   = v-rescale
+tc-grps                  = Protein Non-Protein
+tau_t                    = 1.0  1.0  
+ref_t                    = 300  300  
+Pcoupl                   = no
+tau_p                    = 1.0
+compressibility          = 4.5e-5
+ref_p                    = 1.0
+gen_vel                  = yes
+gen_temp                 = 300  
+gen_seed                 = 173529  
+constraints              = hbonds
+
+cutoff-scheme = verlet    ; needed for gmx 5 !!!!!
+
+; pulling parameters
+; THR90_CA in protein, and ALA_CA in the ligand are the pull groups
+; see: http://www.bevanlab.biochem.vt.edu/Pages/Personal/justin/gmx-tutorials/umbrella/05_pull.html
+
+;;;;; Pull code for gmx 5.1.2 ;;;;;;;;;
+
+; FEP part
+free-energy 		= yes
+refcoord_scaling = com
+sc-alpha = 0.5
+sc-coul = no
+sc-power = 1
+sc-sigma = 0.3
+couple-moltype = Dum_Pocket
+couple-lambda0 = none
+couple-lambda1 = vdw
+couple-intramol = no
+nstdhdl = 500
+
+init-lambda-state        = 0
+vdw_lambdas              = 0.50 0.60 0.70 0.80 0.90 1.00
+calc-lambda-neighbors = -1
+separate_dhdl_file = yes
+
