@@ -1,0 +1,27 @@
+----------------------------------------
+Begin Batch Job Prologue Thu Dec  5 17:06:18 EST 2019
+Job ID:           357298
+Username:         tuf74040
+Group:            roder_voelz
+Job Name:         mbar_fep
+Resources List:   walltime=24:00:00,nodes=1:ppn=20,neednodes=1:ppn=20
+Queue:            normal
+Account:          
+Nodes:            c003 
+----------------------------------------
+End Batch Job Prologue Thu Dec  5 17:06:19 EST 2019
+----------------------------------------
+----------------------------------------
+Begin Batch Job Epilogue Thu Dec  5 17:06:50 EST 2019
+Job ID:           357298
+Username:         tuf74040
+Group:            roder_voelz
+Job Name:         mbar_fep
+Session:          21069
+Limits:           walltime=24:00:00,nodes=1:ppn=20,neednodes=1:ppn=20
+Resources:        cput=00:00:07,vmem=4402204kb,walltime=00:00:32,mem=585728kb,energy_used=0
+Queue:            normal
+Account:          
+----------------------------------------
+End Batch Job Epilogue Thu Dec  5 17:07:11 EST 2019
+----------------------------------------
