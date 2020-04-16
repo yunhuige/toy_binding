@@ -1,0 +1,15 @@
+# set up two center of mass of two ACT domain
+c1: COM ATOMS=1,2,3,4,5,6,7,8,10,11
+d1: DISTANCE ATOMS=c1,12
+# Activate metadynamics in d1
+# depositing a Gaussian every 500 time steps,
+# with height equal to 1.2 kJoule/mol,
+# and width 0.35 rad for both CVs.
+# Well-tempered metadynamics is activated,
+# and the biasfactor is set to 6.0
+#
+metad: METAD ARG=d1 PACE=5000 HEIGHT=0.01 SIGMA=0.01 FILE=HILLS BIASFACTOR=20.0 TEMP=300.0 GRID_MIN=0.0 GRID_MAX=3.0 GRID_BIN=500
+
+# monitor the variable and the metadynamics bias potential
+PRINT STRIDE=10 ARG=d1,metad.bias FILE=COLVAR
+
