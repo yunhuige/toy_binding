@@ -1,0 +1,27 @@
+----------------------------------------
+Begin Batch Job Prologue Wed Dec 18 12:18:35 EST 2019
+Job ID:           358418
+Username:         tuf74040
+Group:            roder_voelz
+Job Name:         tram_fep
+Resources List:   walltime=24:00:00,nodes=1:ppn=20,neednodes=1:ppn=20
+Queue:            normal
+Account:          
+Nodes:            c043 
+----------------------------------------
+End Batch Job Prologue Wed Dec 18 12:18:35 EST 2019
+----------------------------------------
+----------------------------------------
+Begin Batch Job Epilogue Wed Dec 18 12:27:48 EST 2019
+Job ID:           358418
+Username:         tuf74040
+Group:            roder_voelz
+Job Name:         tram_fep
+Session:          12545
+Limits:           walltime=24:00:00,nodes=1:ppn=20,neednodes=1:ppn=20
+Resources:        cput=00:02:21,vmem=3278884kb,walltime=00:09:13,mem=489208kb,energy_used=0
+Queue:            normal
+Account:          
+----------------------------------------
+End Batch Job Epilogue Wed Dec 18 12:28:09 EST 2019
+----------------------------------------
