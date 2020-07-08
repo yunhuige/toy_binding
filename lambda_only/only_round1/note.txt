@@ -1,0 +1,6 @@
+cumu1: lambda 0.5+1.0
+cumu2: lambda 0.6+1.0
+cumu3: lambda 0.7+1.0
+cumu4: lambda 0.8+1.0
+cumu5: lambda 0.9+1.0
+cumu6: lambda 0.5+0.6+0.7+0.8+0.9+1.0
